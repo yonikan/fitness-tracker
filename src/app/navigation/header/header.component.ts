@@ -13,6 +13,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
   isAuth = false;
   authSubscription: Subscription;
 
+  
+  // added for the user dropdown
+  isOpen: boolean;
+
+
   constructor(private authService: AuthService) { }
 
   ngOnInit() {
@@ -33,4 +38,12 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.authSubscription.unsubscribe();
   }
 
+  // added for the user dropdown
+  toggleDropdown() {
+    this.isOpen = !this.isOpen;
+  }
+
+  onClickOutside() {
+    this.isOpen = false;
+  }
 }

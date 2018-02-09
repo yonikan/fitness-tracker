@@ -6,6 +6,9 @@ import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent },
+  { path: 'settings', component: WelcomeComponent },
+  { path: 'dashboard', component: WelcomeComponent },
+  { path: 'nutrition', component: WelcomeComponent },
   { path: 'training', loadChildren: './training/training.module#TrainingModule', canLoad: [AuthGuard] }
 ];
 

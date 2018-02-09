@@ -17,13 +17,15 @@ import { TrainingService } from './training/training.service';
 import { environment } from '../environments/environment';
 import { UIService } from './shared/ui.service';
 import { AuthModule } from './auth/auth.module';
+import { ClickOutsideDirective } from './navigation/header/click-outside.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
     HeaderComponent,
-    SidenavListComponent
+    SidenavListComponent,
+    ClickOutsideDirective
   ],
   imports: [
     BrowserModule,
