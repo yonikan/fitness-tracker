@@ -10,7 +10,7 @@ import { PastTrainingsComponent } from './past-trainings/past-trainings.componen
 import { StopTrainingComponent } from './current-training/stop-training.component';
 import { MaterialModule } from '../material.module';
 import { SharedModule } from '../shared/shared.module';
-import { TrainingRoutingModule } from './training-routing.module';
+import { TrainingRoutingModule } from './training.routing';
 
 @NgModule({
   declarations: [
