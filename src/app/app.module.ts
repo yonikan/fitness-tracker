@@ -9,7 +9,6 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material.module';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './navigation/header/header.component';
 import { ClickOutsideDirective } from './navigation/header/click-outside.directive';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
@@ -19,6 +18,7 @@ import { environment } from '../environments/environment';
 import { UIService } from './shared/ui.service';
 import { AuthModule } from './auth/auth.module';
 import { SettingsComponent } from './settings/settings.component';
+import { AppRoutingModule } from './app.routing';
 
 @NgModule({
   declarations: [

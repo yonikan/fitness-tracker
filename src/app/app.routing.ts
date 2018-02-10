@@ -8,6 +8,7 @@ import { SettingsComponent } from './settings/settings.component';
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent },
+  { path: 'home', component: WelcomeComponent },
   { path: 'settings', component: SettingsComponent },
   { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule', canLoad: [AuthGuard] },
   { path: 'training', loadChildren: './training/training.module#TrainingModule', canLoad: [AuthGuard] }

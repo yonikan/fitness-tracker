@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WelcomeComponent implements OnInit {
 
+  cards;
+  
   constructor() { }
 
   ngOnInit() {
+    this.cards = [1,2,3,4];
+
   }
 
 }

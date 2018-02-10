@@ -12,31 +12,37 @@
   <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
     <ul fxLayout fxLayoutGap="10px" class="navigation-items">
       <li *ngIf="!isAuth">
-          <button class="icon-button" type="button" mat-button (click)="null">
+          <button class="icon-button" type="button" mat-button routerLinkActive="active" routerLink="/signup">
               <a routerLink="/signup">Signup</a>
           </button>
       </li>
 
       <li *ngIf="!isAuth">
-          <button class="icon-button" type="button" mat-button (click)="null">
+          <button class="icon-button" type="button" mat-button routerLinkActive="active" routerLink="/login">
               <a routerLink="/login">Login</a>
           </button>
       </li>
 
       <li *ngIf="isAuth">
-          <button class="icon-button" type="button" mat-button routerLink="/dashboard">
+          <button class="icon-button" type="button" mat-button routerLinkActive="active" routerLink="/home">
+              Home
+          </button>
+      </li>
+
+      <li *ngIf="isAuth">
+          <button class="icon-button" type="button" mat-button routerLinkActive="active" routerLink="/dashboard">
               Dashboard
           </button>
       </li>
 
       <li *ngIf="isAuth">
-          <button class="icon-button" type="button" mat-button routerLink="/training">
+          <button class="icon-button" type="button" mat-button  routerLinkActive="active" routerLink="/training">
               Training
           </button>
       </li>
 
       <li *ngIf="isAuth">
-          <button class="icon-button" type="button" mat-button routerLink="/settings">
+          <button class="icon-button" type="button" mat-button routerLinkActive="active" routerLink="/settings">
               Settings
           </button>
       </li>
@@ -159,10 +165,10 @@
               <div class="dropdown mat-elevation-z1" [class.open]="isOpen">
                 <div class="content">
                   <div class="list">
-                    <div class="item" fxLayout="row" fxLayoutAlign="start center" matRipple>
+                    <!-- <div class="item" fxLayout="row" fxLayoutAlign="start center" matRipple>
                       <mat-icon class="icon">account_circle</mat-icon>
                       <span class="title">Profile</span>
-                    </div>
+                    </div> -->
                     <div  class="item" fxLayout="row" fxLayoutAlign="start center" matRipple (ng-click)="onClickSetting()">
                       <mat-icon class="icon">settings</mat-icon>
                       <span class="title">Settings</span>
