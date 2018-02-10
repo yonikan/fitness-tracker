@@ -6,6 +6,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 
+import { AngularFireStorageModule } from 'angularfire2/storage';
+
+
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material.module';
 import { WelcomeComponent } from './welcome/welcome.component';
@@ -37,7 +40,8 @@ import { AppRoutingModule } from './app.routing';
     FlexLayoutModule,
     AngularFireModule.initializeApp(environment.firebase),
     AuthModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AngularFireStorageModule
   ],
   providers: [AuthService, TrainingService, UIService],
   bootstrap: [AppComponent]
