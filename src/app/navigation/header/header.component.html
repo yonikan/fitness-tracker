@@ -12,31 +12,138 @@
   <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
     <ul fxLayout fxLayoutGap="10px" class="navigation-items">
       <li *ngIf="!isAuth">
-        <a routerLink="/signup">Signup</a>
+          <button class="icon-button" type="button" mat-button (click)="null">
+              <a routerLink="/signup">Signup</a>
+          </button>
       </li>
 
       <li *ngIf="!isAuth">
-        <a routerLink="/login">Login</a>
+          <button class="icon-button" type="button" mat-button (click)="null">
+              <a routerLink="/login">Login</a>
+          </button>
       </li>
 
       <li *ngIf="isAuth">
-        <a routerLink="/training">Training</a>
+          <button class="icon-button" type="button" mat-button routerLink="/dashboard">
+              Dashboard
+          </button>
       </li>
 
       <li *ngIf="isAuth">
+          <button class="icon-button" type="button" mat-button routerLink="/training">
+              Training
+          </button>
+      </li>
+
+      <li *ngIf="isAuth">
+          <button class="icon-button" type="button" mat-button routerLink="/settings">
+              Settings
+          </button>
+      </li>
+
+      <!-- <li *ngIf="isAuth">
           <a routerLink="/nutrition">Nutrition</a>
-      </li>
-
-      <li *ngIf="isAuth">
-          <a routerLink="/dashboard">Dashboard</a>
-      </li>
+      </li> -->
 
       <!-- <li *ngIf="isAuth">
           <a routerLink="/settings">Settings</a>
       </li> -->
 
       <li *ngIf="isAuth">
-        <a style="cursor: pointer" (click)="onLogout()">Logout</a>
+          <button class="icon-button" type="button" mat-button (click)="onLogout()">
+              <a style="cursor: pointer" >Logout</a>
+          </button>
+      </li>
+
+      <li *ngIf="isAuth">
+          <button class="icon-button" type="button" mat-button (click)="null">
+              <mat-icon class="icon">notifications_active</mat-icon>
+          </button>
+
+          <!-- <div class="toolbar-button" fxLayout="row" fxLayoutAlign="start center" (msClickOutside)="onClickOutside()">
+              <button class="icon-button" type="button" mat-button (click)="toggleDropdown()" [class.open]="isOpen">
+                <mat-icon class="icon">notifications_active</mat-icon>
+              </button>
+            
+              <div class="dropdown mat-elevation-z1" [class.open]="isOpen">
+                <div class="card">
+                  <div class="header" fxLayout="row" fxLayoutAlign="space-between center">
+                    <div class="title">
+                      <div class="name">Notifications</div>
+                      <div class="extra">You have 3 new notifications.</div>
+                    </div>
+                    <button type="button" mat-icon-button>
+                      <mat-icon class="icon">settings</mat-icon>
+                    </button>
+                  </div>
+
+                  <div class="content">
+                    <div class="notification" fxLayout="row" fxLayoutAlign="start center" matRipple>
+                      <mat-icon class="icon">notifications</mat-icon>
+                      <div class="title" fxLayout="column">
+                        <div class="name">This is a notification</div>
+                        <div class="time">few sec ago</div>
+                      </div>
+                      <span fxFlex></span>
+                      <button type="button" mat-icon-button>
+                        <mat-icon class="close">close</mat-icon>
+                      </button>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="notification primary" fxLayout="row" fxLayoutAlign="start center" matRipple>
+                      <mat-icon class="icon">shopping_basket</mat-icon>
+                      <div class="title" fxLayout="column">
+                        <div class="name">User bought your template</div>
+                        <div class="time">23 min ago</div>
+                      </div>
+                      <span fxFlex></span>
+                      <button type="button" mat-icon-button>
+                        <mat-icon class="close">close</mat-icon>
+                      </button>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="notification accent" fxLayout="row" fxLayoutAlign="start center" matRipple>
+                      <mat-icon class="icon">eject</mat-icon>
+                      <div class="title" fxLayout="column">
+                        <div class="name">Server Crashed</div>
+                        <div class="time">an hour ago</div>
+                      </div>
+                      <span fxFlex></span>
+                      <button type="button" mat-icon-button>
+                        <mat-icon class="close">close</mat-icon>
+                      </button>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="notification read" fxLayout="row" fxLayoutAlign="start center" matRipple>
+                      <mat-icon class="icon">cached</mat-icon>
+                      <div class="title" fxLayout="column">
+                        <div class="name">New user registered</div>
+                        <div class="time">6 hours ago</div>
+                      </div>
+                      <span fxFlex></span>
+                      <button type="button" mat-icon-button>
+                        <mat-icon class="close">close</mat-icon>
+                      </button>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="notification read" fxLayout="row" fxLayoutAlign="start center" matRipple>
+                      <mat-icon class="icon">code</mat-icon>
+                      <div class="title" fxLayout="column">
+                        <div class="name">John added you as friend</div>
+                        <div class="time">yesterday</div>
+                      </div>
+                      <span fxFlex></span>
+                      <button type="button" mat-icon-button>
+                        <mat-icon class="close">close</mat-icon>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="footer" fxLayout="row" fxLayoutAlign="center center">
+                    <div class="action">Mark all as read</div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
       </li>
 
       <li *ngIf="isAuth">
@@ -53,18 +160,17 @@
                 <div class="content">
                   <div class="list">
                     <div class="item" fxLayout="row" fxLayoutAlign="start center" matRipple>
-                      
                       <mat-icon class="icon">account_circle</mat-icon>
                       <span class="title">Profile</span>
                     </div>
-                    <div  class="item" fxLayout="row" fxLayoutAlign="start center" matRipple>
+                    <div  class="item" fxLayout="row" fxLayoutAlign="start center" matRipple (ng-click)="onClickSetting()">
                       <mat-icon class="icon">settings</mat-icon>
                       <span class="title">Settings</span>
                     </div>
-                    <div class="item" fxLayout="row" fxLayoutAlign="start center" matRipple>
+                    <!-- <div class="item" fxLayout="row" fxLayoutAlign="start center" matRipple>
                       <mat-icon class="icon">help</mat-icon>
                       <span class="title">Help</span>
-                    </div>
+                    </div> -->
                     <mat-divider></mat-divider>
                     <div class="item" fxLayout="row" fxLayoutAlign="start center" matRipple [routerLink]="['/login']">
                       <mat-icon class="icon">exit_to_app</mat-icon>

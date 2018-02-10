@@ -2,6 +2,7 @@ import { Component, OnInit, EventEmitter, Output, OnDestroy } from '@angular/cor
 import { Subscription } from 'rxjs/Subscription';
 
 import { AuthService } from '../../auth/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -18,7 +19,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   isOpen: boolean;
 
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
     this.authSubscription = this.authService.authChange.subscribe(authStatus => {
@@ -45,5 +46,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   onClickOutside() {
     this.isOpen = false;
+  }
+
+  onClickSetting() {
+    this.router.navigate(['/training']);
   }
 }

@@ -3,12 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { WelcomeComponent } from './welcome/welcome.component';
 import { AuthGuard } from './auth/auth.guard';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { SettingsComponent } from './settings/settings.component';
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent },
-  { path: 'settings', component: WelcomeComponent },
-  { path: 'dashboard', component: WelcomeComponent },
-  { path: 'nutrition', component: WelcomeComponent },
+  { path: 'settings', component: SettingsComponent },
+  { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule', canLoad: [AuthGuard] },
   { path: 'training', loadChildren: './training/training.module#TrainingModule', canLoad: [AuthGuard] }
 ];
 
