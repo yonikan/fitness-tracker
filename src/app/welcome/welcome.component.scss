@@ -1,7 +1,21 @@
 
+@import "../../assets/styles/var";
+
+    h1 {
+      text-align: center;
+      font-size: 3em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      text-align: center;
+      // font-size: 3em;
+      text-transform: uppercase;
+    }
 
 
 .cards-container {
+  margin-top: 20px;
   padding: 20px;
   
   .welcome {
@@ -10,5 +24,7 @@
   
   mat-card {
     width: 33%;
+    margin-bottom: 25px;
+    margin-right: 25px;
   }
 }

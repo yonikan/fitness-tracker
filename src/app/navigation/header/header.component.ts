@@ -17,6 +17,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   
   // added for the user dropdown
   isOpen: boolean;
+  isOpen2: boolean;
 
 
   constructor(private authService: AuthService, private router: Router) { }
@@ -50,5 +51,13 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   onClickSetting() {
     this.router.navigate(['/training']);
+  }
+
+  toggleDropdown2() {
+    this.isOpen2 = !this.isOpen2;
+  }
+
+  onClickOutside2() {
+    this.isOpen2 = false;
   }
 }

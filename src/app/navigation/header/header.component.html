@@ -55,23 +55,27 @@
           <a routerLink="/settings">Settings</a>
       </li> -->
 
+
       <li *ngIf="isAuth">
           <button class="icon-button" type="button" mat-button (click)="onLogout()">
               <a style="cursor: pointer" >Logout</a>
           </button>
       </li>
 
-      <li *ngIf="isAuth">
-          <button class="icon-button" type="button" mat-button (click)="null">
-              <mat-icon class="icon">notifications_active</mat-icon>
-          </button>
+      <!-- <li *ngIf="isAuth">
+        <button [fxHide]="true" [fxHide.gt-sm]="false" mat-button class="fullscreen-toggle" (click)="toggleFullscreen()">
+          <mat-icon *ngIf="!isFullscreen">fullscreen</mat-icon>
+          <mat-icon *ngIf="isFullscreen">fullscreen_exit</mat-icon>
+        </button>
+     </li> -->
 
-          <!-- <div class="toolbar-button" fxLayout="row" fxLayoutAlign="start center" (msClickOutside)="onClickOutside()">
-              <button class="icon-button" type="button" mat-button (click)="toggleDropdown()" [class.open]="isOpen">
+      <li *ngIf="isAuth">
+          <div class="toolbar-button" fxLayout="row" fxLayoutAlign="start center" (msClickOutside)="onClickOutside2()">
+              <button class="icon-button" type="button" mat-button (click)="toggleDropdown2()" [class.open]="isOpen2">
                 <mat-icon class="icon">notifications_active</mat-icon>
               </button>
             
-              <div class="dropdown mat-elevation-z1" [class.open]="isOpen">
+              <div class="dropdown mat-elevation-z1" [class.open]="isOpen2">
                 <div class="card">
                   <div class="header" fxLayout="row" fxLayoutAlign="space-between center">
                     <div class="title">
@@ -87,7 +91,7 @@
                     <div class="notification" fxLayout="row" fxLayoutAlign="start center" matRipple>
                       <mat-icon class="icon">notifications</mat-icon>
                       <div class="title" fxLayout="column">
-                        <div class="name">This is a notification</div>
+                        <div class="name" routerLink="/home">This is a notification</div>
                         <div class="time">few sec ago</div>
                       </div>
                       <span fxFlex></span>
@@ -149,7 +153,7 @@
                   </div>
                 </div>
               </div>
-            </div> -->
+            </div>
       </li>
 
       <li *ngIf="isAuth">
@@ -169,14 +173,14 @@
                       <mat-icon class="icon">account_circle</mat-icon>
                       <span class="title">Profile</span>
                     </div> -->
-                    <div  class="item" fxLayout="row" fxLayoutAlign="start center" matRipple (ng-click)="onClickSetting()">
+                    <div  class="item" fxLayout="row" fxLayoutAlign="start center" matRipple routerLink="/settings">
                       <mat-icon class="icon">settings</mat-icon>
                       <span class="title">Settings</span>
                     </div>
-                    <!-- <div class="item" fxLayout="row" fxLayoutAlign="start center" matRipple>
+                    <div class="item" fxLayout="row" fxLayoutAlign="start center" matRipple>
                       <mat-icon class="icon">help</mat-icon>
                       <span class="title">Help</span>
-                    </div> -->
+                    </div>
                     <mat-divider></mat-divider>
                     <div class="item" fxLayout="row" fxLayoutAlign="start center" matRipple [routerLink]="['/login']">
                       <mat-icon class="icon">exit_to_app</mat-icon>

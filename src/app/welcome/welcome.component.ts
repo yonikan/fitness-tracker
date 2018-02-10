@@ -12,7 +12,7 @@ export class WelcomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.cards = [1,2,3,4];
+    this.cards = [1,2,3,4, 5, 6];
 
   }
 
